@@ -38,3 +38,6 @@
  2. npm install
  3. npm run build
  4. npm run start
+
+
+Версия node v22.12.0
