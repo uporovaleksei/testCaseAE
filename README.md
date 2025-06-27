@@ -26,9 +26,10 @@
 В новом терминале:
 
 1. cd frontend
-2. npm run build
-3. npm install -g serve
-4. serve -s dist
+2. npm install
+3. npm run build
+4. npm install -g serve
+5. serve -s dist
 
 ## Установка и запуск Backend
 
