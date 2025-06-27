@@ -14,7 +14,9 @@ router.post('/login', (req, res) => {
   const user = users.find(u => u.name === name && u.password === password);
 
   if (!user) {
-    return res.status(401).json({ message: 'Пользователь не найден' });
+    res.status(401).json({ message: 'Пользователь не найден' });
+    res.end()
+    return
   }
 
 

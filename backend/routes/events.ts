@@ -15,7 +15,9 @@ router.patch('/:id', (req: Request, res: Response) => {
 
   const event = events.find(e => e.id === Number(id));
   if (!event) {
-    return res.status(404);
+    res.status(404);
+    res.end()
+    return
   }
 
   event.status = status;
@@ -27,7 +29,9 @@ router.delete('/:id', (req: Request, res: Response) => {
   const index = events.findIndex(e => e.id === Number(id));
 
   if (index === -1) {
-    return res.status(404);
+    res.status(404);
+    res.end()
+    return
   }
 
   const deleted = events.splice(index, 1)[0];
@@ -38,7 +42,9 @@ router.post('/new_order', (req: Request, res: Response) => {
   const { name, address, date, status, comment } = req.body;
 
   if (!name || !address || !date || !status) {
-    return res.status(400);
+    res.status(400);
+    res.end()
+    return
   }
 
   const newEvent = {
